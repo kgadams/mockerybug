@@ -1,0 +1,11 @@
+dir: .
+filename: mock_{{.InterfaceName}}_test.go
+template: testify
+pkgname: mockerybug
+force-file-write: true
+packages:
+  githbub.com/kgadams/mockerybug:
+    interfaces:
+      itf:
+        config:
+          structname: mockItf
