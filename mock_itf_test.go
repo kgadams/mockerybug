@@ -5,7 +5,6 @@
 package mockerybug
 
 import (
-	"githbub.com/kgadams/mockerybug"
 	mock "github.com/stretchr/testify/mock"
 )
 
@@ -37,7 +36,7 @@ func (_m *mockItf) EXPECT() *mockItf_Expecter {
 }
 
 // Use provides a mock function for the type mockItf
-func (_mock *mockItf) Use(structParam *mockerybug.Struct) {
+func (_mock *mockItf) Use(structParam *Struct) {
 	_mock.Called(structParam)
 	return
 }
@@ -48,16 +47,16 @@ type mockItf_Use_Call struct {
 }
 
 // Use is a helper method to define mock.On call
-//   - structParam *mockerybug.Struct
+//   - structParam *Struct
 func (_e *mockItf_Expecter) Use(structParam interface{}) *mockItf_Use_Call {
 	return &mockItf_Use_Call{Call: _e.mock.On("Use", structParam)}
 }
 
-func (_c *mockItf_Use_Call) Run(run func(structParam *mockerybug.Struct)) *mockItf_Use_Call {
+func (_c *mockItf_Use_Call) Run(run func(structParam *Struct)) *mockItf_Use_Call {
 	_c.Call.Run(func(args mock.Arguments) {
-		var arg0 *mockerybug.Struct
+		var arg0 *Struct
 		if args[0] != nil {
-			arg0 = args[0].(*mockerybug.Struct)
+			arg0 = args[0].(*Struct)
 		}
 		run(
 			arg0,
@@ -71,7 +70,7 @@ func (_c *mockItf_Use_Call) Return() *mockItf_Use_Call {
 	return _c
 }
 
-func (_c *mockItf_Use_Call) RunAndReturn(run func(structParam *mockerybug.Struct)) *mockItf_Use_Call {
+func (_c *mockItf_Use_Call) RunAndReturn(run func(structParam *Struct)) *mockItf_Use_Call {
 	_c.Run(run)
 	return _c
 }
